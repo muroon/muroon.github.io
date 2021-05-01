@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>go-athena development - muroon</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">muroon</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="go-athena.html" class="active">go-athena development</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">speee/go-athena development</h1>
+							<span class="image fit"><img src="images/speee-go-athena.png" alt="" /></span>
+							<p>We released <a href="https://github.com/speee/go-athena">speee/go-athena</a>, and we would like to introduce it here.</p>
+
+							<section>
+								<h2>What is go-athena</h2>
+								<p>go-athena is a Golang database/sql package driver for AWS Athena.</p>
+								<p>You can use it as follows:</p>
+								<pre><code>import (
+    "database/sql"
+    _ "github.com/speee/go-athena"
+)
+
+func main() {
+  db, _ := sql.Open("athena", "db=default&output_location=s3://results")
+  rows, _ := db.Query("SELECT url, code from cloudfront")
+
+  for rows.Next() {
+    var url string
+    var code int
+    rows.Scan(&url, &code)
+  }
+}
+								</code></pre>
+								<p>This library was originally maintained <a href="https://github.com/segmentio/go-athena">here</a>, but unfortunately, it looks like it has not been maintained actively, then we started maintaining it instead.</p>
+
+								<p>We added <a href="https://github.com/speee/go-athena/blob/master/doc/introduction.md#new-features">new features</a>, including importing some of the issues that were originally up.</p>
+								<p>I think the biggest difference compared to the original repository is <a href="https://github.com/speee/go-athena/blob/master/doc/result_mode.md">Result Mode</a>. Please read it!</p>
+							</section>
+
+							<section>
+								<div class="row">
+									<div class="col-6 col-12-medium">
+										<h3>Code</h3>
+										<ul>
+											<li><a href="https://github.com/speee/go-athena">speee/go-athena</a></li>
+										</ul>
+									</div>
+									<div class="col-6 col-12-medium">
+										<h3>Articles</h3>
+										<ul>
+											<li><a href="https://github.com/speee/go-athena/blob/master/doc/introduction.md">GitHub</a></li>
+											<li><a href="https://tech.speee.jp/entry/2020/12/22/001511">Speee Developer Blog. (Japanese)</a></li>
+											<li><a href="https://speakerdeck.com/muroon/go-athenafalseda-liang-detaqu-de-wosu-kusitafang-fa">Speaker Deck. (Japanese)</a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+						</div>
+					</section>
+			</div>
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
